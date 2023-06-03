@@ -8,29 +8,18 @@
     <link rel="stylesheet" type="text/css" href="/styles/index.css">
   </head>
   <body>
-    <div class="header">
-      <a href="/" class="logo">
-      <img src="/images/web_logo.png"   height="50">
-      </a>
-      <div class="header-right">
-        <a class="active" id="imeKat" ></a> 
-        <a href="/cart" class="cart">
-          <div class="cartPhoto" id="cartPhoto">
-          <img src="/images/shopingcart.png"   height="100">
-          <div class="cartNum" id="cartNum">-1</div>
-        </div>
-        </a>
-        <a class="search">
-          <img src="/images/searchButton.png"   height="100">
-        </a>
-      </div>
-     </div> 
+    <%- include('partials/header') %> 
 
      <div class="Content">
 
      <div class="lijevo">
       <div class="kategorije" id="bob">
-
+         <% for(var i = 0; i < data.categories.length-1 ;i++){ %>
+                <div>
+                    <%var ll='/getProducts/'+i%>
+                   <a id = <%=i%> href=<%=ll%> ><%= data.categories[i].name%></a>
+               </div>   
+                   <% } %>
       </div>
       <div class="PR-stuff">
         <div> <a class="link">Kontakt</a></div>
@@ -41,8 +30,21 @@
 
      </div>
 
-     <div class="desno-gore"><img src="images/nicePhoto.jpg" height="310px" width="100%"><label class="top-left">Dobrodošli!</label></div>
-     <div class="desno-dolje" id="bob2"></div>
+     <div class="desno-gore"><img src="/images/nicePhoto.jpg" height="310px" width="100%"><label class="top-left">Dobrodošli!</label></div>
+     <div class="desno-dolje" id="bob2">
+       <% for(var j=0;j<products.length;j++){%>
+          
+            <% var tempy=(chosenCat+" "+j) %>
+            <div class="productSpace" id="<%-tempy%>">
+                <div>
+                    <img id=<%=chosenCat%> src="/images/<%=products[j].image%>"">
+                    <div class="productNum">tempNum</div>
+                    <img class="hiddenCart" id="c" src="/images/orangecart.png" alt="">
+                </div>
+                <div id="t"><%=products[j].name%></div>
+            </div>
+            <% } %>
+     </div>
 
 
 
