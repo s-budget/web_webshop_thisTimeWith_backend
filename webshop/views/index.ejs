@@ -34,15 +34,15 @@
      <div class="desno-dolje" id="bob2">
        <% for(var j=0;j<products.length;j++){%>
           
-            <% var tempy=(chosenCat+" "+j) %>
-            <div class="productSpace" id="<%-tempy%>">
+            <% var tempy=(chosenCat+" "+j);var lll=("/getProducts/"+chosenCat+"/add/"+j) %>
+            <a href=<%=lll%> class="productSpace" id="<%-tempy%>">
                 <div>
-                    <img id=<%=chosenCat%> src="/images/<%=products[j].image%>"">
+                    <img id=<%=chosenCat%> src="/images/<%=products[j].image%>">
                     <div class="productNum">tempNum</div>
-                    <img class="hiddenCart" id="c" src="/images/orangecart.png" alt="">
+                    <img class="hiddenCart" id="c" src="/images/orangecart.png">
                 </div>
                 <div id="t"><%=products[j].name%></div>
-            </div>
+            </a>
             <% } %>
      </div>
 

@@ -17,8 +17,40 @@ router.get("/getCategories",(req,res)=>
     res.send(productData.categories);
 });
 router.get("/getProducts/:id",async (req,res)=>
-{console.log(req.params.id);
+{
     res.render('index',{chosenCat:req.params.id, data: productData,products:productData.categories[req.params.id].products});
+});
+router.get("/getProducts/:id/add/:prodId",async (req,res)=>
+{
+    var code=req.params.id+" "+req.params.prodId;
+    //update sessions
+    if(req.session.cart)
+    {req.session.cart;
+        var found=0;
+        for(var i=0;i<req.session.cart.length;i++)
+        {
+            if(req.session.cart[i].code==code)
+            {
+                req.session.cart[i].quantity=(req.session.cart[i].quantity+1);
+                found=1;
+                break;
+                
+            }
+        }
+        if(found==0)
+        {
+            var product ={code:code,quantity:1};
+            req.session.cart.push(product);
+        }
+    }
+    else
+    {
+        console.log("new sessss")
+        var product ={code:code,quantity:1}
+        req.session.cart=[product];
+
+    }
+ res.redirect(('/getProducts/'+req.params.id));
 });
 
 module.exports=router;

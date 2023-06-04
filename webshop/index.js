@@ -1,7 +1,8 @@
 
-const productData=require('./data/data')
+const productData=require('./data/data');
 
 const express=require("express");
+const cookieParser=require('cookie-parser');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
@@ -12,16 +13,17 @@ const indexRouter=require('./routes/index.routes');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-
+app.use(cookieParser());
 app.use(session({
     secret: 'MiskoMiskoMisko',
     resave: false,
-    store: new FileStore(),
     saveUninitialized: false,
-    cookie:
-    {
-        expires:5*60000
+    cookie: {
+ 
+        // Session expires after 1 min of inactivity.
+        expires: 60000*10
     }
+    
   })) ;
 
 app.set("view engine", "ejs");
