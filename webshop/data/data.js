@@ -75,7 +75,7 @@ const data = {
             "image" : "ručna pila.jpg",
             "products" : [
                 { 
-                    "name" : "ručna motorna pila", "image" : "ručna pila.jpg"
+                    "name" : "ručna motorna pila", "image" : "rucna pila.jpg"
                 },
                 { 
                     "name" : "stolna pila", "image" : "stolna pila.jpg"
@@ -97,7 +97,7 @@ const data = {
                 { 
                     "name" : "metar s kočnicom 5m", "image" : "metar 5m.jpg"
                 },{ 
-                    "name" : "električni mjerač temperature", "image" : "električni mjerač temperature.jpg"
+                    "name" : "električni mjerač temperature", "image" : "elektricni mjerac temperature.jpg"
                 },{ 
                     "name" : "zidarski metar 2m", "image" : "zidarski metar.jpg"
                 },{ 
@@ -167,7 +167,7 @@ const data = {
                 },{ 
                     "name" : "matice fi8 10g", "image" : "matice.jpg"
                 },{ 
-                    "name" : "šarafi fi8 10g", "image" : "šerafi.jpg"
+                    "name" : "šarafi fi8 10g", "image" : "serafi.jpg"
                 },{ 
                     "name" : "samorezni šaraf za drvo", "image" : "samorezni serafi.jpg"
                 }

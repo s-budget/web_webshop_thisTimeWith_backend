@@ -52,3 +52,8 @@ else
 }
 res.redirect(('/cart'));
 });
+router.get("/cart/getAll",(req,res)=>
+{
+     res.send(req.session.cart);
+});
+module.exports=router;

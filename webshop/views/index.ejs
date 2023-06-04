@@ -15,10 +15,12 @@
      <div class="lijevo">
       <div class="kategorije" id="bob">
          <% for(var i = 0; i < data.categories.length-1 ;i++){ %>
+          <%var ll='/getProducts/'+i%>
+          <a id = <%=i%> href=<%=ll%> >
                 <div>
-                    <%var ll='/getProducts/'+i%>
-                   <a id = <%=i%> href=<%=ll%> ><%= data.categories[i].name%></a>
+                   <%= data.categories[i].name%>
                </div>   
+              </a>
                    <% } %>
       </div>
       <div class="PR-stuff">

@@ -156,15 +156,19 @@ body{
   height:min-content;
 }
 
-.Content .lijevo .kategorije div{
+.Content .lijevo .kategorije a{
   text-align: center;
+  color:black;
+  text-decoration: none;
   width: 60%;
   border-radius: 5px;
   border-style: solid;
   border-color: rgba(73, 26, 26, 0.75);
   background-color: rgb(124, 92, 92);
 }
-.Content .lijevo .kategorije div:hover{
+.Content .lijevo .kategorije a:hover{
+  text-decoration: none;
+  color:black;
   text-align: center;
   width: 50%;
   border-radius: 5px;
@@ -172,7 +176,14 @@ body{
   border-color: rgba(73, 26, 26, 0.75);
   background-color: rgb(124, 92, 92);
 }
-.Content .lijevo .kategorije div a{
+.Content .lijevo .kategorije a div{
+  color:black;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+
+}
+.Content .lijevo .kategorije a div a{
   text-align: center;
   font-size: 100%;
   width: 100%;
