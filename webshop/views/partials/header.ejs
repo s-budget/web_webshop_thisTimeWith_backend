@@ -8,7 +8,8 @@
       <a href="/cart" class="cart">
         <div class="cartPhoto" id="cartPhoto">
         <img src="/images/shopingcart.png"   height="100">
-        <div class="cartNum" id="cartNum"><%=total%></div>
+        <%var tt="";if(total!=0){tt=total;}%>
+        <div class="cartNum" id="cartNum"><%=tt%></div>
       </div>
       </a>
       <a class="search">

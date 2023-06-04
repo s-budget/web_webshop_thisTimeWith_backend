@@ -38,7 +38,7 @@
             <a href=<%=lll%> class="productSpace" id="<%-tempy%>">
                 <div>
                     <img id=<%=chosenCat%> src="/images/<%=products[j].image%>">
-                    <%var chocho="";for(var i =0;i<cart.length;i++){if(cart[i].code==tempy){chocho=cart[i].quantity;break;}}  %>
+                    <%var chocho="";if(cart){for(var i =0;i<cart.length;i++){if(cart[i].code==tempy){chocho=cart[i].quantity;break;}}}  %>
                     <div class="productNum"><%=chocho%></div>
                     <img class="hiddenCart" id="c" src="/images/orangecart.png">
                 </div>

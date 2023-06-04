@@ -150,17 +150,22 @@ body{
      justify-items: center;
     column-gap: 10px;
   }
-  .kosarica .lista .red .desno div img{
+  .kosarica .lista .red .desno a img{
     align-self: center;
     text-align: center;
     width: 50px;
   }
-  .kosarica .lista .red .desno div img:hover{
+  .kosarica .lista .red .desno a img:hover{
     align-self: center;
     text-align: center;
     width: 45px;
   }
-   .kosarica .lista .red .desno div{
+   .kosarica .lista .red .desno a{
+    align-self: center;
+    text-align: center;
+    width: 50px;
+  }
+  .kosarica .lista .red .desno div{
     align-self: center;
     text-align: center;
     width: 50px;
