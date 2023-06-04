@@ -5,11 +5,11 @@ const router = express.Router()
 const productData=require('../data/data');
 router.get("/",async (req,res)=>
 {
-    res.render('index',{chosenCat:productData.categories.length-1, data: productData,products:productData.categories[productData.categories.length-1].products});
+    res.render('index',{chosenCat:productData.categories.length-1, data: productData,products:productData.categories[productData.categories.length-1].products,total:req.session.totalProduct,cart:req.session.cart});
 });
 router.get("/cart",(req,res)=>
 {
-    res.render('cart',{data:productData});
+    res.render('cart',{chosenCat:productData.categories.length-1,data:productData,total:req.session.totalProduct,cart:req.session.cart});
 });
 router.get("/getCategories",(req,res)=>
 {//this is useless
@@ -18,7 +18,7 @@ router.get("/getCategories",(req,res)=>
 });
 router.get("/getProducts/:id",async (req,res)=>
 {
-    res.render('index',{chosenCat:req.params.id, data: productData,products:productData.categories[req.params.id].products});
+    res.render('index',{chosenCat:req.params.id, data: productData,products:productData.categories[req.params.id].products,total:req.session.totalProduct,cart:req.session.cart});
 });
 router.get("/getProducts/:id/add/:prodId",async (req,res)=>
 {
@@ -42,12 +42,14 @@ router.get("/getProducts/:id/add/:prodId",async (req,res)=>
             var product ={code:code,quantity:1};
             req.session.cart.push(product);
         }
+        req.session.totalProduct=(req.session.totalProduct+1);
     }
     else
     {
         console.log("new sessss")
         var product ={code:code,quantity:1}
         req.session.cart=[product];
+        req.session.totalProduct=1;
 
     }
  res.redirect(('/getProducts/'+req.params.id));
